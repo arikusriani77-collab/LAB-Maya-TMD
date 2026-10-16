@@ -60,37 +60,45 @@ canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 @media(max-width:860px){.grid{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}.left{min-height:240px}.right{max-height:38dvh}.note,.ro,.hd small{display:none}.hd button{padding:6px 8px;font-size:11px}.ins input{padding:4px 6px;font-size:12px}}
 @media(max-width:860px) and (orientation:landscape){.grid{grid-template-columns:minmax(0,1fr) 260px;grid-template-rows:none}.left{min-height:0}.right{max-height:none}}
 .opt{display:flex;gap:8px;align-items:center;padding:7px 10px;border:1px solid var(--bd);border-radius:10px;margin:5px 0;cursor:pointer;font-size:13px;font-weight:400}.opt input{width:auto}.ok{border-color:var(--grn);background:rgba(52,211,153,.15)}.no{border-color:var(--red);background:rgba(251,113,133,.15)}
+button:disabled{opacity:.45;cursor:not-allowed}body.lock nav{display:none}body.lock .pg{height:var(--vh)}
+@keyframes sw{from{transform:skewX(calc(var(--a,4deg)*-1))}to{transform:skewX(var(--a,4deg))}}.sw{transform-box:fill-box;transform-origin:50% 100%;animation:sw .32s ease-in-out infinite alternate}.s2{--a:2.4deg}.s3{--a:1deg}@keyframes pd{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}.pd{transform-origin:325px 72px;animation:pd 1.1s ease-in-out infinite alternate}.pd2{transform-origin:533px 102px;animation:pd 1.1s ease-in-out infinite alternate}@keyframes wv{to{transform:translateX(80px)}}.wv{animation:wv .5s linear infinite}@media (prefers-reduced-motion:reduce){.sw,.pd,.pd2,.wv{animation:none}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body>
+<body class="lock">
 <nav><b>🏛️ Lab Maya TMD</b>
-<button data-p="cover" class="on">🏠<span> Sampul</span></button><button data-p="guide">📖<span> Pedoman</span></button><button data-p="lkpd">📝<span> LKPD A–C</span></button><button data-p="lab">🧪<span> Lab Maya</span></button><button data-p="anal">🧮<span> Analisis</span></button><button data-p="kuis">❓<span> Kuis</span></button><button data-p="dev">👩‍💻<span> Pengembang</span></button>
+<button data-p="cover" class="on">🏠<span> Sampul</span></button><button data-p="ident">👥<span> Identitas</span></button><button data-p="guide">📖<span> Pedoman</span></button><button data-p="lkpd">📝<span> LKPD A–C</span></button><button data-p="lab">🧪<span> Lab Maya</span></button><button data-p="anal">🧮<span> Analisis</span></button><button data-p="kuis">❓<span> Kuis</span></button><button data-p="dev">👩‍💻<span> Pengembang</span></button>
 <div id="chip">Kelompok belum diisi</div></nav>
 
 <section class="pg on" id="cover">
 <div class="blob" style="width:300px;height:300px;background:#38bdf8;top:-60px;left:-60px"></div><div class="blob" style="width:340px;height:340px;background:#a855f7;bottom:-80px;right:-60px;animation-delay:-4s"></div>
 <div class="wrap hero">
 <span class="badge">STEM LAB MAYA • SMAN 1 NGAMPRAH • KELAS XI FASE F</span>
-<h1>Tuned Mass Damper <span class="grad">Bandul Clay</span></h1>
-<p class="mut" style="max-width:640px;margin:0 auto 14px">Mitigasi resonansi gempa untuk bangunan di seluruh Indonesia. Bandingkan <b style="color:var(--red)">gedung tanpa bandul</b>, <b style="color:#f59e0b">bandul percobaan awal</b>, dan <b style="color:var(--grn)">bandul percobaan perbaikan</b>, lalu isi LKPD Matematika (deret geometri tak hingga) &amp; Fisika (getaran harmonis).</p>
-<div class="card" style="text-align:left"><h3>👥 Identitas Kelompok</h3>
+<h1>Bandul Clay <span class="grad">Penjaga Gedung</span> dari Guncangan Gempa</h1>
+<p class="mut" style="max-width:640px;margin:0 auto 14px">Mitigasi resonansi gempa untuk bangunan di seluruh Indonesia. Bandingkan <b style="color:var(--red)">gedung tanpa bandul</b>, <b style="color:#f59e0b">bandul tanpa sayap (kontrol)</b>, dan <b style="color:var(--grn)">bandul bersayap</b>, lalu isi LKPD Matematika (deret geometri tak hingga) &amp; Fisika (getaran harmonis).</p>
+<svg viewBox='0 0 640 250' style='width:100%;max-width:620px;height:auto;display:block;margin:8px auto 16px;border-radius:18px;border:1px solid var(--bd)' role='img' aria-label='Tiga gedung diguncang gempa: tanpa TMD, TMD tanpa sayap (kontrol), dan TMD bersayap'><defs><linearGradient id='gs' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1e1b4b'/><stop offset='1' stop-color='#4f46e5'/></linearGradient><pattern id='wn' width='26' height='30' patternUnits='userSpaceOnUse'><rect x='6' y='8' width='14' height='16' rx='2' fill='rgba(255,255,255,.28)'/></pattern></defs><rect width='640' height='250' fill='url(#gs)'/><circle cx='566' cy='46' r='22' fill='#fde68a' opacity='.9'/><g fill='#fff' opacity='.7'><circle cx='60' cy='30' r='1.6'/><circle cx='150' cy='54' r='1.2'/><circle cx='260' cy='26' r='1.5'/><circle cx='420' cy='40' r='1.3'/><circle cx='500' cy='22' r='1.6'/></g><g class='sw'><rect x='78' y='90' width='78' height='120' fill='rgba(251,113,133,.25)' stroke='#fb7185' stroke-width='3'/><rect x='78' y='90' width='78' height='120' fill='url(#wn)'/></g><g class='sw s2'><rect x='286' y='60' width='78' height='150' fill='rgba(245,158,11,.25)' stroke='#f59e0b' stroke-width='3'/><rect x='286' y='60' width='78' height='150' fill='url(#wn)'/><g class='pd'><line x1='325' y1='72' x2='325' y2='112' stroke='#38bdf8' stroke-width='2'/><circle cx='325' cy='118' r='9' fill='#eab308'/></g></g><g class='sw s3'><rect x='494' y='90' width='78' height='120' fill='rgba(52,211,153,.25)' stroke='#34d399' stroke-width='3'/><rect x='494' y='90' width='78' height='120' fill='url(#wn)'/><g class='pd2'><line x1='533' y1='102' x2='533' y2='140' stroke='#38bdf8' stroke-width='2'/><circle cx='533' cy='146' r='9' fill='#eab308'/></g></g><rect y='210' width='640' height='40' fill='#0f172a'/><path class='wv' d='M-80 210 q20 -14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0' stroke='#38bdf8' stroke-width='2.5' fill='none'/><g fill='#fff' font-size='11' font-family='Inter,sans-serif' font-weight='700' text-anchor='middle'><text x='117' y='234'>Tanpa TMD</text><text x='325' y='234'>TMD kontrol</text><text x='533' y='234'>TMD bersayap</text></g></svg>
+<button class="go" id="mulai">Mulai →</button>
+<p class="mut" style="margin-top:12px">Dikembangkan oleh Ari Kusriani Iman, S.Pd. • Guru Matematika SMAN 1 Ngamprah</p>
+</div></section>
+<section class="pg" id="ident"><div class="wrap"><div class="card" style="text-align:left"><h3>👥 Identitas Kelompok</h3>
 <label>Nama Kelompok</label><input id="gn" placeholder="mis. Kelompok Garuda">
+<label style="margin-top:8px">Nama Ketua Kelompok</label><input id="gk" placeholder="Nama ketua">
+<label style="margin-top:8px">Kelas</label><input id="kls" placeholder="mis. XI-3" style="max-width:200px">
 <div class="team"><div><label>Anggota 1</label><input class="mem"></div><div><label>Anggota 2</label><input class="mem"></div><div><label>Anggota 3</label><input class="mem"></div><div><label>Anggota 4</label><input class="mem"></div><div><label>Anggota 5</label><input class="mem"></div></div>
-<div style="text-align:center"><button class="go" data-p="guide">Mulai Petualangan →</button></div></div><p class="mut" style="margin-top:12px">Dikembangkan oleh Ari Kusriani Iman, S.Pd. • Guru Matematika SMAN 1 Ngamprah</p>
+<div style="text-align:center"><button class="go" id="lanjut" disabled>Lanjut ke Pedoman →</button><p class="mut" id="idmsg" style="margin:8px 0 0">Lengkapi nama kelompok, ketua, kelas, dan 5 anggota untuk melanjutkan.</p></div></div><p class="mut" style="margin-top:12px">Dikembangkan oleh Ari Kusriani Iman, S.Pd. • Guru Matematika SMAN 1 Ngamprah</p>
 </div></section>
 
 <section class="pg" id="guide"><div class="wrap">
 <h2>📖 Pedoman Penggunaan</h2>
 <div class="g2">
-<div class="card step"><div class="num">1</div><div><h3>Isi identitas</h3><p class="mut">Tulis nama kelompok dan 5 anggota di Sampul. Nama otomatis muncul di LKPD.</p></div></div>
-<div class="card step"><div class="num">2</div><div><h3>Kunci panjang tali</h3><p class="mut">Isi frekuensi gempa f dan hitung L di LKPD Langkah C1; nilainya otomatis tersimpan di Lab Maya.</p></div></div>
-<div class="card step"><div class="num">3</div><div><h3>Percobaan fisik</h3><p class="mut">Bentuk clay sesuka kelompok tanpa petunjuk; coba-coba sampai r pas untuk menghentikan getaran. Tarik a = 20 cm, rekam, catat U₁, U₂, U₃.</p></div></div>
-<div class="card step"><div class="num">4</div><div><h3>Uji di Lab Maya</h3><p class="mut">f, L, m, dan r sudah terisi otomatis dari LKPD. Klik <b>Goyang</b>: gempa 1 detik mengguncang tiga gedung (tanpa TMD, TMD percobaan awal, TMD percobaan perbaikan).</p></div></div>
-<div class="card step"><div class="num">5</div><div><h3>Baca hasil</h3><p class="mut">Penghitung di atap gedung menunjukkan waktu sampai berhenti. Bandingkan puncak simpangan dan persen pengurangan.</p></div></div>
-<div class="card step"><div class="num">6</div><div><h3>Selesaikan LKPD</h3><p class="mut">Lengkapi bagian A–C di LKPD, uji di Lab Maya, lalu jawab Analisis &amp; Kesimpulan. Akhiri dengan Kuis.</p></div></div>
+<div class="card step"><div class="num">1</div><div><h3>Isi identitas</h3><p class="mut">Tulis nama kelompok, ketua, dan 5 anggota di Sampul. Nama otomatis muncul di LKPD.</p></div></div>
+<div class="card step"><div class="num">2</div><div><h3>Kunci panjang tali</h3><p class="mut">LKPD A–B (stimulus, tantangan, batasan) dan C1: pilih f gempa 0,50–0,70 Hz, hitung L, tekan Cek, pilih massa clay m.</p></div></div>
+<div class="card step"><div class="num">3</div><div><h3>Percobaan fisik</h3><p class="mut">LKPD C2–C3: tarik a = 20 cm, ukur simpangan sisi kanan U₅, U₁₀, U₁₅, U₂₀. Percobaan 1 tanpa sayap (kontrol), percobaan 2 dengan sayap rancangan kelompok.</p></div></div>
+<div class="card step"><div class="num">4</div><div><h3>Uji di Lab Maya</h3><p class="mut">Data f, L, m, dan r terisi otomatis dari LKPD. Klik <b>Goyang</b> (gempa 1 detik), atur kecepatan 1×/3×/6×, atau Reset.</p></div></div>
+<div class="card step"><div class="num">5</div><div><h3>Baca hasil</h3><p class="mut">Bandingkan puncak simpangan, persen pengurangan, dan waktu berhenti tiga gedung: tanpa TMD, TMD tanpa sayap (kontrol), TMD bersayap.</p></div></div>
+<div class="card step"><div class="num">6</div><div><h3>Selesaikan LKPD</h3><p class="mut">Tab Analisis (D dan E), Kuis 5 soal, lalu unduh Hasil Kerja (PDF).</p></div></div>
 </div>
-<div class="card" style="margin-top:12px"><h3>💡 Tips</h3><p class="mut">• Frekuensi gempa diisi di LKPD C1; gedung dibuat beresonansi dengan gempa itu.<br>• TMD paling efektif bila frekuensi bandul = frekuensi gempa (L = g/(2πf)²). Tali 50–100 cm hanya bisa menyamakan f 0,50–0,70 Hz; f lain (rentang 0,2–10 Hz) membuat bandul kurang tuned.<br>• Setelah selesai, klik Unduh Hasil Kerja (PDF) di tab Analisis atau Kuis.<br>• Tombol Kecepatan 3×/6× mempercepat waktu tunggu.<br>• Batas input: L 50–100 cm, m 100–200 g, r 0,10–0,95.</p>
+<div class="card" style="margin-top:12px"><h3>💡 Tips</h3><p class="mut">• Ukur simpangan selalu di sisi kanan; U₁ = a = 20 cm. r tiap titik = (Uₙ/a)<sup>1/(n−1)</sup>, lalu dirata-ratakan.<br>• Kedua percobaan memakai L, m, dan a yang sama; satu-satunya pembeda adalah sayap (karton, maks. 10 × 10 cm).<br>• Tali 50–100 cm hanya bisa menyamakan f 0,50–0,70 Hz. Di Lab Maya, f di luar rentang itu (0,2–10 Hz) dipakai sebagai kasus bandul kurang tuned.<br>• Data Lab Maya kosong di awal: terisi otomatis dari LKPD, atau bisa diisi langsung di Lab. Tombol Reset di Lab mengosongkan data kembali.<br>• Klik Unduh Hasil Kerja (PDF) di tab Analisis atau Kuis.</p>
 <div style="text-align:center"><button class="go" data-p="lkpd">Buka LKPD 📝</button></div></div>
 </div></section>
 
@@ -98,45 +106,57 @@ canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 <div class="hd"><div><b>🧪 Virtual Lab: Gedung vs Pendulum (TMD)</b> <small class="mut">Mitigasi gempa Indonesia</small></div>
 <div><button class="quake" id="bq">⚡ Goyang (gempa 1 detik)</button> <button class="reset" id="bs">Kecepatan 1×</button> <button class="reset" id="br">Reset</button></div></div>
 <div class="grid">
-<div class="card left"><div class="legend"><span style="color:var(--red)">● Tanpa TMD</span><span style="color:#f59e0b">● TMD percobaan awal</span><span style="color:var(--grn)">● TMD percobaan perbaikan</span><span id="status">Status: TENANG</span></div><div class="cwrap"><canvas id="cv"></canvas></div></div>
+<div class="card left"><div class="legend"><span style="color:var(--red)">● Tanpa TMD</span><span style="color:#f59e0b">● TMD tanpa sayap (kontrol)</span><span style="color:var(--grn)">● TMD bersayap</span><span id="status">Status: TENANG</span></div><div class="cwrap"><canvas id="cv"></canvas></div></div>
 <div class="card right"><h3>⚙️ Input Data LKPD</h3>
 <div class="ins">
-<div><label>L tali (cm) 50–100</label><input type="number" id="iL" value="50" min="50" max="100"></div>
-<div><label>m clay (g) 100–200</label><input type="number" id="im" value="150" min="100" max="200"></div>
-<div><label>r awal</label><input type="number" id="ir0" value="0.80" step="0.05" min="0.1" max="0.95"></div>
-<div><label>r perbaikan</label><input type="number" id="ir" value="0.40" step="0.05" min="0.1" max="0.95"></div>
-<div><label>f gempa (Hz, dari LKPD)</label><input type="number" id="iq" value="0.70" readonly style="opacity:.7"></div>
+<div><label>L tali (cm) 50–100</label><input type="number" id="iL" placeholder="50–100" min="50" max="100"></div>
+<div><label>m clay (g) 100–200</label><input type="number" id="im" placeholder="100–200" min="100" max="200"></div>
+<div><label>r kontrol</label><input type="number" id="ir0" placeholder="0,10–0,95" step="0.05" min="0.1" max="0.95"></div>
+<div><label>r bersayap</label><input type="number" id="ir" placeholder="0,10–0,95" step="0.05" min="0.1" max="0.95"></div>
+<div><label>f gempa (Hz) 0,2–10</label><input type="number" id="iq" placeholder="0,2–10" step="0.1" min="0.2" max="10"></div>
 <div class="ro"><label>Simpangan awal a (cm)</label><input type="number" value="20" readonly style="opacity:.6"></div></div>
 <div class="res"><div class="rg">
 <div class="row"><span>f</span><b id="oF"></b></div><div class="row"><span>T</span><b id="oT"></b></div>
-<div class="row"><span>S<sub>∞</sub> awal/perb.</span><b id="oS"></b></div><div class="row"><span>ζ awal/perb.</span><b id="oZ"></b></div>
-<div class="row"><span>Diam awal/perb.</span><b id="oB"></b></div><div class="row"><span>Puncak tanpa</span><b id="o1"></b></div>
-<div class="row"><span>Puncak TMD awal</span><b id="o2"></b></div><div class="row"><span>Puncak TMD perb.</span><b id="o3"></b></div><div class="row"><span>Pengurangan awal</span><b id="oR"></b></div><div class="row"><span>Pengurangan perb.</span><b id="oR3" style="color:var(--grn)"></b></div></div>
-<div class="mut note" style="font-size:10px;margin-top:4px">Frekuensi alami gedung = f gempa (resonansi). f, L, m, r awal &amp; r perbaikan terisi otomatis dari LKPD. Dianggap diam bila amplitudo &lt; 0,2 cm.</div></div></div>
+<div class="row"><span>S<sub>∞</sub> kontrol/sayap</span><b id="oS"></b></div><div class="row"><span>ζ kontrol/sayap</span><b id="oZ"></b></div>
+<div class="row"><span>Diam kontrol/sayap</span><b id="oB"></b></div><div class="row"><span>Puncak tanpa</span><b id="o1"></b></div>
+<div class="row"><span>Puncak TMD kontrol</span><b id="o2"></b></div><div class="row"><span>Puncak TMD sayap</span><b id="o3"></b></div><div class="row"><span>Pengurangan kontrol</span><b id="oR"></b></div><div class="row"><span>Pengurangan sayap</span><b id="oR3" style="color:var(--grn)"></b></div></div>
+<div class="mut note" style="font-size:10px;margin-top:4px">Frekuensi alami gedung = f gempa (resonansi). f, L, m, r kontrol &amp; r bersayap terisi otomatis dari LKPD. f di luar 0,50–0,70 Hz = kasus bandul kurang tuned. Dianggap diam bila amplitudo &lt; 0,2 cm.</div></div></div>
 </div></section>
 
 <section class="pg" id="lkpd"><div class="wrap">
 <div class="card sec"><h2>📝 LKPD STEM: TMD Bandul Clay (Bagian A–C)</h2>
-<p class="mut">Matematika &amp; Fisika • Kelas XI / Fase F • Deret Geometri Tak Hingga &amp; Getaran Harmonis/Resonansi</p>
-<p><b>Kelompok:</b> <span id="lg">–</span><br><b>Anggota:</b> <span id="lm">–</span></p></div>
-<div class="g2 sec"><div class="card"><h3>A. Stimulus</h3><p class="mut">Indonesia terletak di pertemuan tiga lempeng besar dan di jalur Cincin Api Pasifik, sehingga hampir seluruh wilayahnya, dari Sumatra, Jawa, Sulawesi, Maluku sampai Papua, berpotensi diguncang gempa. Resonansi terjadi bila frekuensi gempa sama dengan frekuensi alami bangunan, sehingga bangunan bergetar hebat. TMD berupa bandul yang frekuensinya disetel agar energi getaran cepat teredam.</p></div>
-<div class="card"><h3>B. Tantangan &amp; Batasan</h3><p class="mut">1. Kunci frekuensi bandul agar sama dengan frekuensi gempa f lewat panjang tali L (f tidak ditetapkan; kelompok menentukannya).<br>2. Bentuk clay bebas, tanpa petunjuk: coba-coba sampai r pas sehingga getaran gempa cepat berhenti (S<sub>∞</sub> pendek).<br>L: 50–100 cm • m: 100–200 g • bentuk clay bebas • a = 20 cm.</p></div></div>
-<div class="card sec"><h3>C1. Mengunci panjang tali &amp; massa clay</h3><p class="mut">f = (1/2π)√(g/L) ⇒ L = g/(2πf)², g = 9,8 m/s². Isi frekuensi gempa f; nilainya otomatis masuk ke Lab Maya.</p><p>f gempa = <input id="Fans" type="number" step="0.1" min="0.2" max="10" value="0.70" style="width:100px"> Hz <span class="mut">(batas 0,2–10 Hz; studi mikrotremor di Indonesia melaporkan sekitar 0,1–20 Hz)</span></p>
-<p>L = <input class="inl" type="number" id="Lans" placeholder="… cm" style="width:110px"> cm <button class="sm" id="Lchk">Cek</button> <span id="Lres" class="out"></span></p><p>m clay = <input id="Mans" type="number" min="100" max="200" placeholder="100–200" style="width:110px"> gram <span class="mut">(batas 100–200 g)</span></p></div>
-<div class="card sec"><h3>C2–C3. Tabel pengamatan (a = 20 cm)</h3>
-<table class="tb"><tr><th>Percobaan</th><th>U₁ (cm)</th><th>U₂ (cm)</th><th>U₃ (cm)</th><th>r rata-rata</th><th>S<sub>∞</sub> (cm)</th></tr>
-<tr><td>Percobaan awal (bentuk bebas)</td><td><input id="A1" type="number"></td><td><input id="A2" type="number"></td><td><input id="A3" type="number"></td><td class="out" id="rA">–</td><td class="out" id="SA">–</td></tr>
-<tr><td>Percobaan perbaikan (bentuk bebas)</td><td><input id="B1" type="number"></td><td><input id="B2" type="number"></td><td><input id="B3" type="number"></td><td class="out" id="rB">–</td><td class="out" id="SB">–</td></tr></table>
-<p class="mut">Ubah bentuk clay sesukamu lalu ulangi, catat percobaan awal dan percobaan terbaik. r = rata-rata (U₁/a, U₂/U₁, U₃/U₂) • S<sub>∞</sub> = a/(1−r) = 20/(1−r)</p>
+<p class="mut">Matematika &amp; Fisika • Kelas XI / Fase F • Barisan &amp; Deret Geometri, Getaran Harmonis &amp; Resonansi. Ukur simpangan di sisi kanan; U<sub>1</sub> = a = 20 cm.</p>
+<p><b>Kelompok:</b> <span id="lg">–</span><br><b>Tim:</b> <span id="lm">–</span><br><b>Kelas:</b> <span id="lks">–</span></p></div>
+<div class="card sec"><h3>A. Stimulus</h3><p class="mut">Gedung punya frekuensi alami. Bila frekuensi gempa sama dengan frekuensi alami gedung, terjadi resonansi dan simpangan gedung membesar. Tuned Mass Damper (TMD) adalah bandul yang disetel pada frekuensi yang sesuai agar menyerap getaran gedung. Tonton <a href="https://youtu.be/GzMuF-LMGaM" target="_blank" rel="noopener" style="color:var(--tg)">video dua maket gedung yang digoyang</a>, lalu jawab:</p>
+<label>1. Maket mana yang lebih cepat berhenti?</label><textarea id="tA1"></textarea>
+<label style="margin-top:8px">2. Apa yang dipasang pada maket tersebut dan bagaimana menurutmu alat itu bekerja?</label><textarea id="tA2"></textarea></div>
+<div class="card sec"><h3>B. Tantangan &amp; Batasan</h3><p class="mut">Rancang bandul peredam bersayap yang frekuensinya sama dengan frekuensi gempa dan membuat simpangan menurun secepat mungkin (r sekecil mungkin).</p>
+<table class="tb"><tr><th>Batasan</th><th>Ketentuan</th></tr><tr><td>Tali</td><td>50–100 cm</td></tr><tr><td>Massa clay</td><td>100–200 g</td></tr><tr><td>Sayap</td><td>Karton/kertas tebal, bentuk dan luas bebas, maksimal 10 × 10 cm</td></tr><tr><td>Simpangan awal</td><td>U<sub>1</sub> = a = 20 cm, sisi kanan</td></tr><tr><td>Percobaan</td><td>1: tanpa sayap (kontrol) • 2: dengan sayap rancangan kelompok. L, m, dan a sama.</td></tr></table></div>
+<div class="card sec"><h3>C1. Mengunci panjang tali &amp; massa clay</h3><p class="mut">f = (1/2π)√(g/L) ⇒ L = g/(2πf)², g = 9,8 m/s².</p>
+<p>f gempa pilihan kelompok = <input id="Fans" type="number" step="0.05" min="0.5" max="0.7" placeholder="0,50–0,70" style="width:110px"> Hz <span class="mut">(0,50–0,70 Hz)</span></p>
+<p>L = <input class="inl" type="number" id="Lans" placeholder="… cm" style="width:110px"> cm <button class="sm" id="Lchk">Cek</button> <span id="Lres" class="out"></span></p>
+<p>m clay = <input id="Mans" type="number" min="100" max="200" placeholder="100–200" style="width:110px"> gram <span class="mut">(100–200 g)</span></p>
+<label>Sketsa sayap (bentuk dan ukuran) beserta alasan memilihnya (hambatan udara)</label><textarea id="tSk"></textarea></div>
+<div class="card sec"><h3>C2. Percobaan 1: tanpa sayap (kontrol)</h3>
+<label>Catatan pengamatan</label><input id="tCn" style="margin-bottom:8px"><table class="tb"><tr><th>Titik</th><th>Rumus r</th><th>Uₙ (cm)</th><th>r</th></tr><tr><td>U<sub>1</sub></td><td>a</td><td>20</td><td>–</td></tr><tr><td>U<sub>5</sub></td><td>(U<sub>5</sub>/a)<sup>1/4</sup></td><td><input class='uin' id='A5' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rA5'>–</td></tr><tr><td>U<sub>10</sub></td><td>(U<sub>10</sub>/a)<sup>1/9</sup></td><td><input class='uin' id='A10' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rA10'>–</td></tr><tr><td>U<sub>15</sub></td><td>(U<sub>15</sub>/a)<sup>1/14</sup></td><td><input class='uin' id='A15' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rA15'>–</td></tr><tr><td>U<sub>20</sub></td><td>(U<sub>20</sub>/a)<sup>1/19</sup></td><td><input class='uin' id='A20' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rA20'>–</td></tr></table><p class="mut">Rata-rata r = <b class="out" id="raA">–</b> &nbsp;|&nbsp; S<sub>∞</sub> = a/(1−r) = <b class="out" id="SA">–</b> cm &nbsp;|&nbsp; r antar titik berdekatan? <select class="inl" id="akA"><option>…</option><option>Ya</option><option>Tidak</option></select></p></div>
+<div class="card sec"><h3>C3. Percobaan 2: dengan sayap rancangan kelompok</h3>
+<label>Deskripsi sayap (bentuk, luas) dan alasannya</label><input id="tDs" style="margin-bottom:8px"><table class="tb"><tr><th>Titik</th><th>Rumus r</th><th>Uₙ (cm)</th><th>r</th></tr><tr><td>U<sub>1</sub></td><td>a</td><td>20</td><td>–</td></tr><tr><td>U<sub>5</sub></td><td>(U<sub>5</sub>/a)<sup>1/4</sup></td><td><input class='uin' id='B5' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rB5'>–</td></tr><tr><td>U<sub>10</sub></td><td>(U<sub>10</sub>/a)<sup>1/9</sup></td><td><input class='uin' id='B10' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rB10'>–</td></tr><tr><td>U<sub>15</sub></td><td>(U<sub>15</sub>/a)<sup>1/14</sup></td><td><input class='uin' id='B15' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rB15'>–</td></tr><tr><td>U<sub>20</sub></td><td>(U<sub>20</sub>/a)<sup>1/19</sup></td><td><input class='uin' id='B20' type='number' step='0.1' min='0' max='19.9'></td><td class='out' id='rB20'>–</td></tr></table><p class="mut">Rata-rata r = <b class="out" id="raB">–</b> &nbsp;|&nbsp; S<sub>∞</sub> = a/(1−r) = <b class="out" id="SB">–</b> cm &nbsp;|&nbsp; r antar titik berdekatan? <select class="inl" id="akB"><option>…</option><option>Ya</option><option>Tidak</option></select></p>
+<table class="tb" style="margin-top:8px"><tr><th>Perbandingan</th><th>Percobaan 1 (tanpa sayap)</th><th>Percobaan 2 (bersayap)</th></tr>
+<tr><td>Rata-rata r</td><td class="out" id="cr1">–</td><td class="out" id="cr2">–</td></tr><tr><td>U<sub>20</sub> (cm)</td><td class="out" id="cu1">–</td><td class="out" id="cu2">–</td></tr><tr><td>S<sub>∞</sub> (cm)</td><td class="out" id="cs1">–</td><td class="out" id="cs2">–</td></tr></table>
 <p id="verdict" class="out"></p>
-<p class="mut" id="synn">🔗 f, L, m, r awal, dan r perbaikan otomatis tersimpan di Lab Maya.</p></div>
+<p class="mut">🔗 f, L, m, serta r kontrol dan r bersayap otomatis tersimpan di Lab Maya. Syarat S<sub>∞</sub>: −1 &lt; r &lt; 1.</p></div>
 </div></section>
 <section class="pg" id="anal"><div class="wrap">
 <div class="card sec"><h2>🧮 Analisis &amp; Kesimpulan</h2><p class="mut">Gunakan data LKPD dan hasil Lab Maya. Kelompok: <b id="lg2">–</b></p><p id="lres" class="mut"></p></div>
 <div class="card sec"><h3>D. Analisis &amp; Refleksi</h3>
-<label>1. Percobaan mana yang r-nya lebih kecil? Bentuk clay apa yang kalian buat, dan mengapa (gesekan udara)?</label><textarea></textarea>
-<label style="margin-top:8px">2. Bentuk clay mana yang paling pas meredam getaran gempa? Alasan!</label><textarea></textarea></div>
-<div class="card sec"><h3>E. Kesimpulan</h3><p class="mut" style="line-height:2.3">Panjang tali berfungsi untuk <input class="inl" style="width:220px"> sedangkan bentuk clay hasil coba-coba berfungsi untuk <input class="inl" style="width:220px">. Semakin besar hambatan udara pada clay, r semakin <select class="inl"><option>…</option><option>kecil</option><option>besar</option></select>, S<sub>∞</sub> semakin <select class="inl"><option>…</option><option>pendek</option><option>panjang</option></select> dan bandul <select class="inl"><option>…</option><option>lebih cepat</option><option>lebih lama</option></select> berhenti.</p></div>
+<label>1. Bandingkan r dan U<sub>20</sub> kedua percobaan. Apa pengaruh sayap pada bandul? Jelaskan dengan hambatan udara.</label><textarea id="tD1"></textarea>
+<label style="margin-top:8px">2. Mengapa r harus kurang dari 1 agar S<sub>∞</sub> ada? Apa arti S<sub>∞</sub> pada bandul? (tantangan lanjutan)</label><textarea id="tD2"></textarea>
+<label style="margin-top:8px">3. Hasil Lab Maya <button class="sm" id="fillLab" style="margin-left:6px">Ambil dari Lab Maya</button></label>
+<table class="tb"><tr><th>Gedung</th><th>Puncak simpangan</th><th>Persen pengurangan</th><th>Waktu berhenti</th></tr><tr><td>Tanpa TMD</td><td><input id="d300"></td><td><input id="d301"></td><td><input id="d302"></td></tr><tr><td>TMD tanpa sayap (kontrol)</td><td><input id="d310"></td><td><input id="d311"></td><td><input id="d312"></td></tr><tr><td>TMD bersayap rancangan kelompok</td><td><input id="d320"></td><td><input id="d321"></td><td><input id="d322"></td></tr></table>
+<label style="margin-top:8px">4. Apa yang terjadi bila frekuensi bandul tidak sama dengan frekuensi gempa? Apakah massa clay mengubah frekuensi bandul? Jelaskan.</label><textarea id="tD4"></textarea>
+<label style="margin-top:8px">5. Bagian desain mana yang akan kamu perbaiki bila ada waktu tambahan?</label><textarea id="tD5"></textarea></div>
+<div class="card sec"><h3>E. Kesimpulan</h3><p class="mut" style="line-height:2.3">Bandul dengan panjang tali L = <input id="e1" class="inl" style="width:70px"> cm memiliki frekuensi sama dengan frekuensi gempa f = <input id="e2" class="inl" style="width:70px"> Hz. Desain sayap <input id="e3" class="inl" style="width:200px"> menghasilkan r = <input id="e4" class="inl" style="width:70px">, lebih <select id="es1" class="inl"><option>…</option><option>kecil</option><option>besar</option></select> daripada bandul tanpa sayap (kontrol), sehingga getaran berhenti lebih <select id="es2" class="inl"><option>…</option><option>cepat</option><option>lambat</option></select>. Di Lab Maya, TMD bersayap mengurangi puncak simpangan sebesar <input id="e5" class="inl" style="width:70px"> %.</p>
+<label>Refleksi: satu hal baru yang kupelajari</label><input id="tR1"><label style="margin-top:8px">Satu hal yang masih membingungkan</label><input id="tR2"></div>
 <div class="card" style="text-align:center"><button class="go pdfb">📄 Unduh Hasil Kerja (PDF)</button><p class="mut pdfm"></p></div>
 </div></section>
 
@@ -149,27 +169,27 @@ canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 <div class="card" style="text-align:center"><div style="font-size:44px">👩‍💻</div><h2>Pengembang</h2><div class="grad" style="font-size:clamp(1.3rem,4vw,1.9rem);font-weight:800">Ari Kusriani Iman, S.Pd.</div><p style="margin:4px 0;font-weight:600">Guru Matematika SMAN 1 Ngamprah</p><p class="mut">Lab Maya STEM Matematika &amp; Fisika untuk SMAN 1 Ngamprah, Kabupaten Bandung Barat</p>
 </div>
 <div class="g2" style="margin-top:12px"><div class="card"><h3>🔬 Model fisika</h3><p class="mut">Gedung: sistem massa-pegas-peredam (frekuensi alami = f gempa, ζ = 2%). Pendulum TMD: ω = √(g/L), redaman dari r lewat ζ = δ/√(4π²+δ²), δ = −ln r. Integrasi numerik langkah kecil.</p></div>
-<div class="card"><h3>📐 Model matematika</h3><p class="mut">Deret geometri tak hingga S<sub>∞</sub> = a/(1−r), |r| &lt; 1, dengan r = rasio simpangan puncak berurutan.</p></div>
+<div class="card"><h3>📐 Model matematika</h3><p class="mut">Barisan geometri Uₙ = a·rⁿ⁻¹ (U₁ = a = 20 cm; titik U₅, U₁₀, U₁₅, U₂₀ sisi kanan) memberi r = (Uₙ/a)<sup>1/(n−1)</sup>, lalu dirata-ratakan. Tantangan lanjutan: deret geometri tak hingga S<sub>∞</sub> = a/(1−r), |r| &lt; 1.</p></div>
 <div class="card"><h3>🛠️ Teknologi</h3><p class="mut">HTML, CSS, JavaScript, Canvas 2D. Dibuat dengan bantuan Claude (Anthropic).</p></div></div>
 </div></section>
 
 <script>
 const $=id=>document.getElementById(id),$$=s=>[...document.querySelectorAll(s)],g=980,a0=20;
-function go(p){$$('.pg').forEach(e=>e.classList.toggle('on',e.id==p));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p==p));if(p=='lab')setTimeout(size,30);if(p=='anal')$('lres').textContent='📋 Data: r awal = '+$('rA').textContent+', r perbaikan = '+$('rB').textContent+' • S∞ = '+$('SA').textContent+' / '+$('SB').textContent+' cm • Lab: puncak tanpa TMD '+$('o1').textContent+', TMD awal '+$('o2').textContent+', TMD perbaikan '+$('o3').textContent+', pengurangan '+$('oR').textContent+' (awal) dan '+$('oR3').textContent+' (perbaikan)'}
+let unlocked=false;function go(p){if(!unlocked&&p!='cover'&&p!='ident')p='ident';$$('.pg').forEach(e=>e.classList.toggle('on',e.id==p));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p==p));if(p=='lab')setTimeout(size,30);if(p=='anal'){fillE();$('lres').textContent='📋 Data: r kontrol = '+$('raA').textContent+', r bersayap = '+$('raB').textContent+' • S∞ = '+$('SA').textContent+' / '+$('SB').textContent+' cm • Lab: puncak tanpa TMD '+$('o1').textContent+', TMD kontrol '+$('o2').textContent+', TMD bersayap '+$('o3').textContent+', pengurangan '+$('oR').textContent+' (kontrol) dan '+$('oR3').textContent+' (bersayap)'}}
 $$('[data-p]').forEach(b=>b.onclick=()=>go(b.dataset.p));
-function grp(){const n=$('gn').value.trim(),ms=$$('.mem').map(i=>i.value.trim()).filter(Boolean);$('chip').textContent=n?'👥 '+n:'Kelompok belum diisi';$('lg').textContent=n||'–';$('lg2').textContent=n||'–';$('lm').textContent=ms.length?ms.join(', '):'–'}
-['gn'].concat([]).forEach(i=>$(i).oninput=grp);$$('.mem').forEach(i=>i.oninput=grp);
+function grp(){const n=$('gn').value.trim(),ms=$$('.mem').map(i=>i.value.trim()).filter(Boolean);$('chip').textContent=n?'👥 '+n:'Kelompok belum diisi';$('lg').textContent=n||'–';$('lg2').textContent=n||'–';const k=$('gk').value.trim(),kl=$('kls').value.trim();$('lks').textContent=kl||'–';$('lm').textContent=(k?'Ketua: '+k+(ms.length?'; ':''):'')+(ms.length?'Anggota: '+ms.join(', '):'')||'–';const okId=n&&k&&kl&&ms.length==5;$('lanjut').disabled=!okId;$('idmsg').textContent=okId?'✅ Identitas lengkap. Silakan lanjut.':'Lengkapi nama kelompok, ketua, kelas, dan 5 anggota untuk melanjutkan.'}
+['gn','gk','kls'].forEach(i=>$(i).oninput=grp);$('mulai').onclick=()=>go('ident');$('lanjut').onclick=()=>{if($('lanjut').disabled)return;unlocked=true;document.body.classList.remove('lock');go('guide')};$$('.mem').forEach(i=>i.oninput=grp);
 const cl=(v,lo,hi,d)=>{v=parseFloat(v);return isNaN(v)?d:Math.min(hi,Math.max(lo,v))};
 let L=50,m=150,r=.4,r0=.8,wp=0,zp=0,zp0=0,fq=.7;
 const M=3000,A=70;let wb=2*Math.PI*.7,kB=0,cB=0;
 function calc(){L=cl($('iL').value,50,100,50);m=cl($('im').value,100,200,150);r=cl($('ir').value,.1,.95,.4);r0=cl($('ir0').value,.1,.95,.8);fq=cl($('iq').value,.2,10,.7);wb=2*Math.PI*fq;kB=M*wb*wb;cB=.04*M*wb;
  const T=2*Math.PI*Math.sqrt(L/g);wp=Math.sqrt(g/L);const zf=q=>{const d=-Math.log(q);return d/Math.sqrt(4*Math.PI*Math.PI+d*d)};zp=zf(r);zp0=zf(r0);
- $('oF').textContent=(1/T).toFixed(2)+' Hz';$('oT').textContent=T.toFixed(2)+' s';$('oS').textContent=(a0/(1-r0)).toFixed(1)+' / '+(a0/(1-r)).toFixed(1)+' cm';$('oZ').textContent=zp0.toFixed(3)+' / '+zp.toFixed(3)}
-['iL','im','ir','ir0','iq'].forEach(id=>{$(id).addEventListener('input',calc);$(id).addEventListener('change',e=>{e.target.value=e.target.id=='iL'?L:e.target.id=='im'?m:e.target.id=='iq'?fq.toFixed(2):e.target.id=='ir0'?r0.toFixed(2):r.toFixed(2);calc();resetSim()})});
+ const hL=$('iL').value.trim()!=='',hR=$('ir0').value.trim()!==''&&$('ir').value.trim()!=='';$('oF').textContent=hL?(1/T).toFixed(2)+' Hz':'–';$('oT').textContent=hL?T.toFixed(2)+' s':'–';$('oS').textContent=hR?(a0/(1-r0)).toFixed(1)+' / '+(a0/(1-r)).toFixed(1)+' cm':'–';$('oZ').textContent=hR?zp0.toFixed(3)+' / '+zp.toFixed(3):'–'}
+['iL','im','ir','ir0','iq'].forEach(id=>{$(id).addEventListener('input',calc);$(id).addEventListener('change',e=>{if(e.target.value!=='')e.target.value=e.target.id=='iL'?L:e.target.id=='im'?m:e.target.id=='iq'?fq.toFixed(2):e.target.id=='ir0'?r0.toFixed(2):r.toFixed(2);calc();resetSim()})});
 let x1,v1,x2,v2,x3,v3,y,vy,yb,vyb,t,run,p1,p2,p3,done,ts1,ts2,ts3,pT,pT3,spd=1;
 function resetSim(){x1=v1=x2=v2=x3=v3=y=vy=yb=vyb=t=0;run=false;p1=p2=p3=0;done=false;ts1=ts2=ts3=pT=pT3=null;setSt('TENANG','');['o1','o2','o3','oR','oR3','oB'].forEach(i=>$(i).textContent='–')}
 function setSt(s,c){const e=$('status');e.textContent='Status: '+s;e.style.color=c||'var(--mut)'}
-$('bq').onclick=()=>{resetSim();run=true;setSt('GEMPA BUMI','var(--red)')};$('br').onclick=resetSim;
+const LI=['iL','im','ir0','ir','iq'];$('bq').onclick=()=>{resetSim();if(LI.some(i=>$(i).value.trim()==='')){setSt('ISI L, m, r, f DULU','#f59e0b');return}run=true;setSt('GEMPA BUMI','var(--red)')};$('br').onclick=()=>{LI.forEach(i=>$(i).value='');calc();resetSim()};
 $('bs').onclick=()=>{spd=spd==1?3:spd==3?6:1;$('bs').textContent='Kecepatan '+spd+'×'};
 const cv=$('cv'),ctx=cv.getContext('2d');let W,H;
 function size(){const r=cv.parentElement.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)}
@@ -191,7 +211,7 @@ const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim
 function draw(){if(!W)return;ctx.clearRect(0,0,W,H);const gy=H-30;
  const gr=ctx.createLinearGradient(0,gy,0,H);gr.addColorStop(0,css('--gnd'));gr.addColorStop(1,'#0f172a');ctx.fillStyle=gr;ctx.fillRect(0,gy,W,30);
  const h=Math.max(50,Math.min(220,H-75,W*.55)),sc=Math.min(3,W/700*3)*h/220;
- bld(W*.17,x1*sc,gy,'TANPA TMD',css('--red'),0,sc,h);bld(W*.5,x2*sc,gy,'TMD AWAL','#f59e0b',1,sc,h);bld(W*.83,x3*sc,gy,'TMD PERBAIKAN',css('--grn'),2,sc,h)}
+ bld(W*.17,x1*sc,gy,'TANPA TMD',css('--red'),0,sc,h);bld(W*.5,x2*sc,gy,'TMD KONTROL','#f59e0b',1,sc,h);bld(W*.83,x3*sc,gy,'TMD BERSAYAP',css('--grn'),2,sc,h)}
 function bld(x0,dx,gy,lb,c,tmd,sc,h){const x=x0+dx,w=h*.5,top=gy-h,k=h/220;
  ctx.beginPath();ctx.moveTo(x0-w/2,gy);ctx.lineTo(x-w/2,top);ctx.lineTo(x+w/2,top);ctx.lineTo(x0+w/2,gy);ctx.closePath();
  ctx.fillStyle=c+'26';ctx.fill();ctx.strokeStyle=c;ctx.lineWidth=3;ctx.stroke();
@@ -205,15 +225,20 @@ function bld(x0,dx,gy,lb,c,tmd,sc,h){const x=x0+dx,w=h*.5,top=gy-h,k=h/220;
   ctx.fillStyle='#eab308';ctx.beginPath();ctx.arc(bx,by,(8+m/25)*k,0,7);ctx.fill()}}
 // LKPD
 const keyOf=f=>9.8/Math.pow(2*3.14*f,2)*100;
-$('Lchk').onclick=()=>{const f=fq,v=parseFloat($('Lans').value);if(isNaN(f)||f<=0){$('Lres').textContent='Isi f gempa dulu.';return}const key=keyOf(f);$('Lres').textContent=isNaN(v)?'':(Math.abs(v-key)<=1.5?'✅ Tepat! Kunci ≈ '+key.toFixed(1)+' cm':'❌ Coba lagi (periksa satuan m→cm)')+(key<50||key>100?' ⚠️ L ideal di luar 50–100 cm: pakai batas terdekat, bandul kurang tuned.':'')};
-const _u=()=>{const f=parseFloat($('Fans').value),v=parseFloat($('Lans').value);if(isNaN(f)||isNaN(v)){alert('Isi f gempa dan L dulu.');return}$('iq').value=f;$('iL').value=v;calc();$('iq').value=fq.toFixed(2);$('iL').value=L;resetSim();go('lab')};
-function rOf(p){const a=[a0,...['1','2','3'].map(i=>parseFloat($(p+i).value))];if(a.some(isNaN)||a.slice(1).some(v=>v<=0))return null;const q=[a[1]/a[0],a[2]/a[1],a[3]/a[2]];return q.reduce((s,v)=>s+v,0)/3}
-function lk(){const R={A:rOf('A'),B:rOf('B')};for(const p of['A','B']){const v=R[p];$('r'+p).textContent=v==null?'–':v.toFixed(2);$('S'+p).textContent=v==null?'–':v>=1?'tak valid':(a0/(1-v)).toFixed(1)}
- $('verdict').textContent=R.A!=null&&R.B!=null&&R.A<1&&R.B<1?(R.A==R.B?'Kedua percobaan sama.':'✅ '+(R.B<R.A?'Percobaan perbaikan':'Percobaan awal')+' paling efektif: r lebih kecil, S∞ lebih pendek, lebih cepat berhenti.'):''}
-$$('#lkpd table input').forEach(i=>i.oninput=()=>{lk();sync()});
-function sync(){const Lv=parseFloat($('Lans').value),Mv=parseFloat($('Mans').value),Ra=rOf('A'),Rb=rOf('B');if(!isNaN(Lv))$('iL').value=Lv;if(!isNaN(Mv))$('im').value=Mv;if(Ra!=null&&Ra<1)$('ir0').value=Ra.toFixed(2);if(Rb!=null&&Rb<1)$('ir').value=Rb.toFixed(2);calc();$('iL').value=L;$('im').value=m;$('ir0').value=r0.toFixed(2);$('ir').value=r.toFixed(2);resetSim()}
-function _old(p){const v=rOf(p);if(v==null||v>=1){alert('Isi U₁, U₂, U₃ '+(p=='A'?'percobaan awal':'percobaan perbaikan')+' dulu.');return}$('ir').value=cl(v,.1,.95,.6).toFixed(2);calc();resetSim();go('lab')}
+const fL=()=>cl($('Fans').value,.5,.7,.7);
+$('Lchk').onclick=()=>{const v=parseFloat($('Lans').value),key=keyOf(fL());$('Lres').textContent=$('Fans').value===''?'Isi f gempa dulu.':isNaN(v)?'Isi L dulu.':(Math.abs(v-key)<=1.5?'✅ Tepat! Kunci ≈ '+key.toFixed(1)+' cm':'❌ Coba lagi (periksa satuan m→cm)')};
+const NS=[[5,4],[10,9],[15,14],[20,19]];
+function rows(p){return NS.map(([n,e])=>{const u=parseFloat($(p+n).value);return{n,u,r:(u>0&&u<a0)?Math.pow(u/a0,1/e):null}})}
+function rOf(p){const v=rows(p).filter(x=>x.r!=null);return v.length?v.reduce((s,x)=>s+x.r,0)/v.length:null}
+function lk(){for(const p of['A','B']){const k=p=='A'?1:2;rows(p).forEach(x=>{$('r'+p+x.n).textContent=x.r!=null?x.r.toFixed(3):(x.u>=a0?'≥ 1, periksa':'–')});
+ const v=rOf(p),rt=v==null?'–':v.toFixed(3),st=v==null?'–':(a0/(1-v)).toFixed(1),u=parseFloat($(p+'20').value);
+ $('ra'+p).textContent=rt;$('S'+p).textContent=st;$('cr'+k).textContent=rt;$('cs'+k).textContent=st;$('cu'+k).textContent=isNaN(u)?'–':u}
+ const A=rOf('A'),B=rOf('B');$('verdict').textContent=A!=null&&B!=null?(B<A?'✅ r bersayap < r kontrol: sayap menambah hambatan udara, getaran lebih cepat berhenti.':B==A?'r kedua percobaan sama.':'⚠️ r bersayap belum lebih kecil dari kontrol. Periksa data atau perbaiki desain sayap.'):''}
+$$('.uin').forEach(i=>i.oninput=()=>{lk();sync()});
+function sync(){const Lv=parseFloat($('Lans').value),Mv=parseFloat($('Mans').value),Ra=rOf('A'),Rb=rOf('B');if(!isNaN(Lv))$('iL').value=Lv;if(!isNaN(Mv))$('im').value=Mv;if(Ra!=null)$('ir0').value=Ra.toFixed(2);if(Rb!=null)$('ir').value=Rb.toFixed(2);calc();if(!isNaN(Lv))$('iL').value=L;if(!isNaN(Mv))$('im').value=m;if(Ra!=null)$('ir0').value=r0.toFixed(2);if(Rb!=null)$('ir').value=r.toFixed(2);resetSim()}
 $('Lans').oninput=sync;$('Mans').oninput=sync;$('Mans').onchange=()=>{if($('Mans').value!=='')$('Mans').value=m};
+$('fillLab').onclick=()=>{const f=q=>q!=null?q.toFixed(1)+' s':'-';[[$('o1').textContent,'-',f(ts1)],[$('o2').textContent,$('oR').textContent,f(ts2)],[$('o3').textContent,$('oR3').textContent,f(ts3)]].forEach((r,i)=>r.forEach((x,j)=>$('d3'+i+j).value=x))};
+function fillE(){[['e1',$('Lans').value],['e2',$('Fans').value],['e4',$('raB').textContent!='–'?$('raB').textContent:''],['e5',$('oR3').textContent.replace(/[^0-9]/g,'')]].forEach(([i,v])=>{if(v&&!$(i).value)$(i).value=v})}
 const QZ=[
 {q:"Resonansi pada bangunan saat gempa terjadi apabila ...",o:["frekuensi gempa sama dengan frekuensi alami bangunan","gempa berlangsung lebih dari satu menit","bangunan lebih tinggi dari 10 lantai","massa bangunan sangat kecil"],a:0,e:"Resonansi terjadi saat frekuensi pengganggu (gempa) sama dengan frekuensi alami bangunan, sehingga simpangan membesar."},
 {q:"Agar bandul berayun pada f = 0,7 Hz (g = 9,8 m/s²), panjang tali L kira-kira ...",o:["25,3 cm","50,7 cm","70,0 cm","100 cm"],a:1,e:"L = g/(2πf)² = 9,8/(2·3,14·0,7)² ≈ 0,507 m = 50,7 cm."},
@@ -223,8 +248,8 @@ const QZ=[
 function qz(){$('qzb').innerHTML=QZ.map((x,i)=>'<div class="card sec"><h3>'+(i+1)+'. '+x.q+'</h3>'+x.o.map((o,j)=>'<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> '+o+'</label>').join('')+'<p class="mut" id="fb'+i+'"></p></div>').join('');$('qres').textContent=''}
 $('qchk').onclick=()=>{let s=0;QZ.forEach((x,i)=>{const sel=document.querySelector('input[name=q'+i+']:checked'),ls=$$('input[name=q'+i+']');ls.forEach((inp,j)=>{inp.parentElement.classList.remove('ok','no');if(j==x.a)inp.parentElement.classList.add('ok');else if(sel&&sel==inp)inp.parentElement.classList.add('no')});const ok=sel&&+sel.value==x.a;if(ok)s++;$('fb'+i).textContent=(ok?'✅ Benar. ':sel?'❌ Kurang tepat. ':'⚠️ Belum dijawab. ')+x.e});$('qres').textContent='Skor: '+s+'/5 (nilai '+s*20+')'};
 $('qrst').onclick=qz;qz();
-function setF(v){v=cl(v,.2,10,.7);$('iq').value=v.toFixed(2);calc();resetSim()}
-$('Fans').oninput=()=>{const v=parseFloat($('Fans').value);if(!isNaN(v))setF(v)};$('Fans').onchange=()=>{$('Fans').value=fq};
+function setF(v){v=cl(v,.5,.7,.7);$('iq').value=v.toFixed(2);calc();resetSim()}
+$('Fans').oninput=()=>{const v=parseFloat($('Fans').value);if(!isNaN(v))setF(v)};$('Fans').onchange=()=>{if($('Fans').value!=='')$('Fans').value=cl($('Fans').value,.5,.7,.7).toFixed(2)};
 const asc=s=>String(s??'').replace(/[\u2081\u2082\u2083]/g,c=>c.charCodeAt(0)-0x2080).replace(/\u00b2/g,'^2').replace(/\u221e/g,'tak hingga').replace(/\u03c0/g,'pi').replace(/\u221a/g,'akar').replace(/\u03b6/g,'zeta').replace(/\u2248/g,'~').replace(/\u2026/g,'...').replace(/[\u2212\u2013]/g,'-').replace(/[\u2022\u00b7]/g,'-').replace(/\u2192/g,'->').replace(/[^\x00-\xff]/g,'');
 async function mkPdf(){
  const say=t=>$$('.pdfm').forEach(e=>e.textContent=t);
@@ -235,22 +260,24 @@ async function mkPdf(){
   const nl=h=>{if(y+h>282){d.addPage();y=16}};
   const hd=(t,sz)=>{nl(10);d.setFont('helvetica','bold');d.setFontSize(sz||12);d.text(asc(t),15,y);y+=sz?8:6.5};
   const ln=t=>{d.setFont('helvetica','normal');d.setFontSize(10);d.splitTextToSize(asc(t),180).forEach(s=>{nl(6);d.text(s,15,y);y+=5.2});y+=1};
-  const v=id=>$(id).value||'-',g=$('gn').value.trim()||'-',ta=$$('#anal textarea'),el=$$('#anal .inl');
+  const V=id=>($(id).value||'').trim()||'-',T=id=>$(id).textContent,g=$('gn').value.trim()||'-',f=fL();
   hd('HASIL KERJA LKPD STEM - TMD BANDUL CLAY',14);
-  ln('Kelompok: '+g);ln('Anggota: '+$('lm').textContent);ln('Tanggal: '+new Date().toLocaleDateString('id-ID'));
+  ln('Kelompok: '+g);ln($('lm').textContent);ln('Kelas: '+V('kls')+' | Tanggal: '+new Date().toLocaleDateString('id-ID'));
+  hd('A. Stimulus');ln('1. Maket yang lebih cepat berhenti: '+V('tA1'));ln('2. Alat yang dipasang dan cara kerjanya: '+V('tA2'));
   hd('C1. Frekuensi, panjang tali, massa clay');
-  ln('f gempa = '+fq.toFixed(2)+' Hz | kunci L = '+keyOf(fq).toFixed(1)+' cm | jawaban L = '+v('Lans')+' cm | m clay = '+v('Mans')+' g');
-  hd('C2-C3. Data percobaan (a = 20 cm)');
-  ln('Percobaan awal: U1='+v('A1')+', U2='+v('A2')+', U3='+v('A3')+' cm | r='+$('rA').textContent+' | S tak hingga='+$('SA').textContent+' cm');
-  ln('Percobaan perbaikan: U1='+v('B1')+', U2='+v('B2')+', U3='+v('B3')+' cm | r='+$('rB').textContent+' | S tak hingga='+$('SB').textContent+' cm');
-  hd('Hasil Lab Maya');
-  ln('Puncak simpangan: tanpa TMD '+$('o1').textContent+' | TMD awal '+$('o2').textContent+' | TMD perbaikan '+$('o3').textContent+' | pengurangan awal '+$('oR').textContent+' | pengurangan perbaikan '+$('oR3').textContent);
-  ln('Gedung berhenti: tanpa TMD '+(ts1!=null?ts1.toFixed(1)+' s':'-')+' | TMD awal '+(ts2!=null?ts2.toFixed(1)+' s':'-')+' | TMD perbaikan '+(ts3!=null?ts3.toFixed(1)+' s':'-')+' | pendulum diam (awal / perbaikan): '+$('oB').textContent);
+  ln('f gempa = '+V('Fans')+' Hz | kunci L = '+($('Fans').value?keyOf(f).toFixed(1):'-')+' cm | jawaban L = '+V('Lans')+' cm | m clay = '+V('Mans')+' g');ln('Sketsa sayap dan alasan: '+V('tSk'));
+  for(const p of['A','B']){hd(p=='A'?'C2. Percobaan 1: tanpa sayap (kontrol)':'C3. Percobaan 2: dengan sayap rancangan kelompok');
+   ln(p=='A'?'Catatan: '+V('tCn'):'Deskripsi sayap: '+V('tDs'));
+   rows(p).forEach(x=>ln('U'+x.n+' = '+(isNaN(x.u)?'-':x.u)+' cm | r = '+T('r'+p+x.n)));
+   ln('Rata-rata r = '+T('ra'+p)+' | S tak hingga = '+T('S'+p)+' cm | r antar titik berdekatan: '+V('ak'+p))}
+  hd('Perbandingan percobaan');ln('Rata-rata r: kontrol '+T('cr1')+', bersayap '+T('cr2')+' | U20: '+T('cu1')+' / '+T('cu2')+' cm | S tak hingga: '+T('cs1')+' / '+T('cs2')+' cm');
   hd('D. Analisis & Refleksi');
-  ln('1. Percobaan mana yang r-nya lebih kecil? Bentuk clay dan alasan:');ln(ta[0].value.trim()||'-');
-  ln('2. Bentuk clay yang paling pas meredam getaran gempa dan alasan:');ln(ta[1].value.trim()||'-');
+  ln('1. Pengaruh sayap (r, U20, hambatan udara): '+V('tD1'));ln('2. Mengapa r < 1 dan arti S tak hingga: '+V('tD2'));
+  ln('3. Hasil Lab Maya:');['Tanpa TMD','TMD tanpa sayap (kontrol)','TMD bersayap'].forEach((n,i)=>ln('   '+n+': puncak '+V('d3'+i+'0')+' | pengurangan '+V('d3'+i+'1')+' | waktu berhenti '+V('d3'+i+'2')));
+  ln('4. f bandul tidak sama dengan f gempa / pengaruh massa: '+V('tD4'));ln('5. Bagian desain yang diperbaiki: '+V('tD5'));
   hd('E. Kesimpulan');
-  ln('Panjang tali berfungsi untuk '+(el[0].value||'...')+'. Bentuk clay hasil coba-coba berfungsi untuk '+(el[1].value||'...')+'. Semakin besar hambatan udara pada clay, r semakin '+el[2].value+', S tak hingga semakin '+el[3].value+' dan bandul '+el[4].value+' berhenti.');
+  ln('Bandul dengan L = '+V('e1')+' cm memiliki frekuensi sama dengan frekuensi gempa f = '+V('e2')+' Hz. Desain sayap '+V('e3')+' menghasilkan r = '+V('e4')+', lebih '+V('es1')+' daripada bandul tanpa sayap (kontrol), sehingga getaran berhenti lebih '+V('es2')+'. Di Lab Maya, TMD bersayap mengurangi puncak simpangan sebesar '+V('e5')+' %.');
+  ln('Refleksi - hal baru: '+V('tR1'));ln('Refleksi - masih membingungkan: '+V('tR2'));
   hd('Kuis');ln($('qres').textContent||'Belum dikerjakan');
   y+=4;ln('Dikembangkan oleh Ari Kusriani Iman, S.Pd. - Guru Matematika SMAN 1 Ngamprah');
   await dl.save({filename:'LKPD-'+g.replace(/[^\w]+/g,'_')+'.pdf',data:d.output('blob')});
