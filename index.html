@@ -127,9 +127,9 @@ button:disabled{opacity:.45;cursor:not-allowed}body.lock nav{display:none}body.l
 <div class="card sec"><h2>📝 LKPD STEM: TMD Bandul Clay (Bagian A–C)</h2>
 <p class="mut">Matematika &amp; Fisika • Kelas XI / Fase F • Barisan &amp; Deret Geometri, Getaran Harmonis &amp; Resonansi. Ukur simpangan di sisi kanan; U<sub>1</sub> = a = 20 cm.</p>
 <p><b>Kelompok:</b> <span id="lg">–</span><br><b>Tim:</b> <span id="lm">–</span><br><b>Kelas:</b> <span id="lks">–</span></p></div>
-<div class="card sec"><h3>A. Stimulus</h3><p class="mut">Gedung punya frekuensi alami. Bila frekuensi gempa sama dengan frekuensi alami gedung, terjadi resonansi dan simpangan gedung membesar. Tuned Mass Damper (TMD) adalah bandul yang disetel pada frekuensi yang sesuai agar menyerap getaran gedung. Tonton <a href="https://youtu.be/GzMuF-LMGaM" target="_blank" rel="noopener" style="color:var(--tg)">video dua maket gedung yang digoyang</a>, lalu jawab:</p>
-<label>1. Maket mana yang lebih cepat berhenti?</label><textarea id="tA1"></textarea>
-<label style="margin-top:8px">2. Apa yang dipasang pada maket tersebut dan bagaimana menurutmu alat itu bekerja?</label><textarea id="tA2"></textarea></div>
+<div class="card sec"><h3>A. Stimulus</h3><p class="mut">Gedung punya frekuensi alami. Bila frekuensi gempa sama dengan frekuensi alami gedung, terjadi resonansi dan simpangan gedung membesar. Tuned Mass Damper (TMD) adalah bandul yang disetel pada frekuensi yang sesuai agar menyerap getaran gedung. Bayangkan dua gedung yang sama persis diguncang gempa yang sama. Gedung pertama tidak memakai peredam. Gedung kedua memasang sebuah bandul berat yang menggantung di bagian atasnya. Gambar tiga gedung di halaman Sampul bisa membantumu membayangkannya. Jawablah:</p>
+<label>1. Menurutmu, gedung mana yang lebih cepat berhenti bergoyang? Jelaskan alasanmu.</label><textarea id="tA1"></textarea>
+<label style="margin-top:8px">2. Bagaimana menurutmu bandul pada gedung kedua bekerja meredam getaran?</label><textarea id="tA2"></textarea></div>
 <div class="card sec"><h3>B. Tantangan &amp; Batasan</h3><p class="mut">Rancang bandul peredam bersayap yang frekuensinya sama dengan frekuensi gempa dan membuat simpangan menurun secepat mungkin (r sekecil mungkin).</p>
 <table class="tb"><tr><th>Batasan</th><th>Ketentuan</th></tr><tr><td>Tali</td><td>50–100 cm</td></tr><tr><td>Massa clay</td><td>100–200 g</td></tr><tr><td>Sayap</td><td>Karton/kertas tebal, bentuk dan luas bebas, maksimal 10 × 10 cm</td></tr><tr><td>Simpangan awal</td><td>U<sub>1</sub> = a = 20 cm, sisi kanan</td></tr><tr><td>Percobaan</td><td>1: tanpa sayap (kontrol) • 2: dengan sayap rancangan kelompok. L, m, dan a sama.</td></tr></table></div>
 <div class="card sec"><h3>C1. Mengunci panjang tali &amp; massa clay</h3><p class="mut">f = (1/2π)√(g/L) ⇒ L = g/(2πf)², g = 9,8 m/s².</p>
@@ -263,7 +263,7 @@ async function mkPdf(){
   const V=id=>($(id).value||'').trim()||'-',T=id=>$(id).textContent,g=$('gn').value.trim()||'-',f=fL();
   hd('HASIL KERJA LKPD STEM - TMD BANDUL CLAY',14);
   ln('Kelompok: '+g);ln($('lm').textContent);ln('Kelas: '+V('kls')+' | Tanggal: '+new Date().toLocaleDateString('id-ID'));
-  hd('A. Stimulus');ln('1. Maket yang lebih cepat berhenti: '+V('tA1'));ln('2. Alat yang dipasang dan cara kerjanya: '+V('tA2'));
+  hd('A. Stimulus');ln('1. Gedung yang lebih cepat berhenti dan alasannya: '+V('tA1'));ln('2. Cara kerja bandul meredam getaran: '+V('tA2'));
   hd('C1. Frekuensi, panjang tali, massa clay');
   ln('f gempa = '+V('Fans')+' Hz | kunci L = '+($('Fans').value?keyOf(f).toFixed(1):'-')+' cm | jawaban L = '+V('Lans')+' cm | m clay = '+V('Mans')+' g');ln('Sketsa sayap dan alasan: '+V('tSk'));
   for(const p of['A','B']){hd(p=='A'?'C2. Percobaan 1: tanpa sayap (kontrol)':'C3. Percobaan 2: dengan sayap rancangan kelompok');
